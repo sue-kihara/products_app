@@ -43,7 +43,7 @@ def edit_product(id):
     product = Product.query.get_or_404(id)
     
     if request.method == 'POST':
-        product.namr = request.form['name']
+        product.name = request.form['name']
         product.price = float(request.form['price'])
         product.quantity = int(request.form['quantity'])
 
