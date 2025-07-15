@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+
+</head>
+<body>
+    <h1>All Products</h1>
+    <a href="/add">Add Product</a>
+    <ul>
+        {% for product in products %}
+            <li>
+                {{ product.name }} - ${{ product.price }} - Qty: {{ product.quantity }}
+                <a href="/edit/{{ product.id }}">Edit</a>
+                <a href="/delete/{{ product.id }}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
